@@ -172,3 +172,4 @@ function getBlackStrategy(eco) {
       return "Develop pieces efficiently and contest central control."
   }
 }
+

@@ -14,6 +14,7 @@ export function ThemeProvider({ children, defaultTheme = "system", storageKey = 
 
     if (theme === "system") {
       const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+
       root.classList.add(systemTheme)
       return
     }
@@ -30,7 +31,7 @@ export function ThemeProvider({ children, defaultTheme = "system", storageKey = 
   }
 
   return (
-    <ThemeProviderContext.Provider value={value} {...props}>
+    <ThemeProviderContext.Provider {...props} value={value}>
       {children}
     </ThemeProviderContext.Provider>
   )
@@ -43,3 +44,4 @@ export const useTheme = () => {
 
   return context
 }
+

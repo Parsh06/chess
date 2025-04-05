@@ -153,3 +153,4 @@ export function GameSettingsForm({ formData, handleChange }) {
     </div>
   )
 }
+
