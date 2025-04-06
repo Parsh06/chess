@@ -147,32 +147,32 @@ export default function MovesPredictionPage() {
                 </Tabs>
 
                 <div className="mt-6 flex gap-4">
-                  <Button
-                    onClick={handleSubmit}
-                    disabled={isLoading}
-                    className="bg-amber-700 hover:bg-amber-600 text-white"
-                  >
-                    {isLoading ? (
-                      <>
-                        <RefreshCw className="mr-2 h-4 w-4 animate-spin" />
-                        Analyzing...
-                      </>
-                    ) : (
-                      <>
-                        <Zap className="mr-2 h-4 w-4" />
-                        Predict Next Moves
-                      </>
-                    )}
-                  </Button>
+  <Button
+    onClick={handleSubmit}
+    disabled={isLoading}
+    className="bg-amber-700 hover:bg-amber-600 text-yellow-400"
+  >
+    {isLoading ? (
+      <>
+        <RefreshCw className="mr-2 h-4 w-4 animate-spin" />
+        Analyzing...
+      </>
+    ) : (
+      <>
+        <Zap className="mr-2 h-4 w-4" />
+        Predict Next Moves
+      </>
+    )}
+  </Button>
 
-                  <Button
-                    variant="outline"
-                    onClick={handleReset}
-                    className="border-amber-800/30 text-amber-300 hover:bg-amber-900/30"
-                  >
-                    Reset
-                  </Button>
-                </div>
+  <Button
+    variant="outline"
+    onClick={handleReset}
+    className="border-amber-800/30 text-amber-300 hover:bg-amber-900/30"
+  >
+    Reset
+  </Button>
+</div>
 
                 {error && (
                   <div className="mt-4 bg-red-900/30 border border-red-800/50 rounded-md p-3 text-sm text-white">

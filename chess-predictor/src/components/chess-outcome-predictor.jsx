@@ -31,7 +31,7 @@ import { GameSettingsForm } from "../components/game-settings-form";
 import { PlayerRatingsForm } from "../components/player-ratings-form";
 import { OpeningDetailsForm } from "../components/opening-details-form";
 import { PredictionResult } from "../components/prediction-result";
-import { predictOutcome } from "../../lib/api"; // Correct import path
+import { predictOutcome } from "../../lib/api"; // Ensure this path is correct
 
 // Define the initial form data structure directly in this file
 const initialFormData = {
@@ -47,7 +47,7 @@ const initialFormData = {
 
 export function ChessOutcomePredictor() {
   const [formData, setFormData] = useState(initialFormData);
-  const [prediction, setPrediction] = useState<string | null>(null);
+  const [prediction, setPrediction] = useState(null); // Removed invalid TypeScript syntax
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
@@ -161,12 +161,9 @@ export function ChessOutcomePredictor() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentStep}
-                initial={{
-                  opacity: 0,
-                  x: currentStep > 4 ? 0 : currentStep % 2 ? 50 : -50,
-                }}
+                initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: currentStep % 2 ? -50 : 50 }}
+                exit={{ opacity: 0, x: 50 }}
                 transition={{ duration: 0.2 }}
               >
                 {currentStep === 1 && (
@@ -246,45 +243,34 @@ export function ChessOutcomePredictor() {
 
           <div className="space-y-6">
             {currentStep !== 4 && (
-              <>
-                <Card className="bg-gray-900/60 border-amber-800/30">
-                  <CardHeader className="pb-2">
-                    <CardTitle className="text-lg font-medium flex items-center">
-                      <Info className="mr-2 h-5 w-5 text-amber-400" />
-                      Step Information
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-sm text-gray-300 space-y-2">
-                    {currentStep === 1 && (
-                      <p>
-                        Configure time controls and game type settings. These
-                        parameters affect how players approach the game.
-                      </p>
-                    )}
-                    {currentStep === 2 && (
-                      <p>
-                        Set player ratings. The rating difference significantly
-                        impacts predicted outcomes.
-                      </p>
-                    )}
-                    {currentStep === 3 && (
-                      <p>
-                        Select opening details. Different openings lead to
-                        different types of middle-game positions.
-                      </p>
-                    )}
-                  </CardContent>
-                </Card>
-
-                {error && (
-                  <Alert
-                    variant="destructive"
-                    className="bg-red-900/30 border-red-800"
-                  >
-                    <AlertDescription>{error}</AlertDescription>
-                  </Alert>
-                )}
-              </>
+              <Card className="bg-gray-900/60 border-amber-800/30">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-lg font-medium flex items-center">
+                    <Info className="mr-2 h-5 w-5 text-amber-400" />
+                    Step Information
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-sm text-gray-300 space-y-2">
+                  {currentStep === 1 && (
+                    <p>
+                      Configure time controls and game type settings. These
+                      parameters affect how players approach the game.
+                    </p>
+                  )}
+                  {currentStep === 2 && (
+                    <p>
+                      Set player ratings. The rating difference significantly
+                      impacts predicted outcomes.
+                    </p>
+                  )}
+                  {currentStep === 3 && (
+                    <p>
+                      Select opening details. Different openings lead to
+                      different types of middle-game positions.
+                    </p>
+                  )}
+                </CardContent>
+              </Card>
             )}
           </div>
         </div>

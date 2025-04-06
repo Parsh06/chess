@@ -96,29 +96,29 @@ export default function OpeningPredictionPage() {
                   </div>
 
                   <div className="flex gap-4">
-                    <Button type="submit" disabled={isLoading} className="bg-amber-700 hover:bg-amber-600 text-white">
-                      {isLoading ? (
-                        <>
-                          <RefreshCw className="mr-2 h-4 w-4 animate-spin" />
-                          Identifying...
-                        </>
-                      ) : (
-                        <>
-                          <Zap className="mr-2 h-4 w-4" />
-                          Identify Opening
-                        </>
-                      )}
-                    </Button>
+  <Button type="submit" disabled={isLoading} className="bg-amber-700 hover:bg-amber-600 text-yellow-400">
+    {isLoading ? (
+      <>
+        <RefreshCw className="mr-2 h-4 w-4 animate-spin" />
+        Identifying...
+      </>
+    ) : (
+      <>
+        <Zap className="mr-2 h-4 w-4" />
+        Identify Opening
+      </>
+    )}
+  </Button>
 
-                    <Button
-                      type="button"
-                      variant="outline"
-                      onClick={handleReset}
-                      className="border-amber-800/30 text-amber-300 hover:bg-amber-900/30"
-                    >
-                      Reset
-                    </Button>
-                  </div>
+  <Button
+    type="button"
+    variant="outline"
+    onClick={handleReset}
+    className="border-amber-800/30 text-amber-300 hover:bg-amber-900/30"
+  >
+    Reset
+  </Button>
+</div>
                 </form>
 
                 {error && (

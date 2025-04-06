@@ -106,7 +106,7 @@ export default function TournamentPredictionPage() {
                   </div>
 
                   <div className="flex gap-4">
-                    <Button type="submit" disabled={isLoading} className="bg-amber-700 hover:bg-amber-600 text-white">
+                    <Button type="submit" disabled={isLoading} className="bg-amber-700 hover:bg-amber-600 text-yellow-400">
                       {isLoading ? (
                         <>
                           <RefreshCw className="mr-2 h-4 w-4 animate-spin" />

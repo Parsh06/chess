@@ -57,7 +57,7 @@ export default function Navbar() {
           <Button variant="outline" className="border-amber-600 text-amber-400 hover:bg-amber-900/20">
             Sign In
           </Button>
-          <Button className="bg-amber-600 hover:bg-amber-500 text-white">Sign Up</Button>
+          <Button className="bg-amber-600 hover:bg-amber-500 text-YELLOW">Sign Up</Button>
         </div>
 
         <button className="md:hidden text-gray-300 hover:text-amber-400" onClick={toggleMenu} aria-label="Toggle menu">

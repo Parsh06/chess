@@ -117,7 +117,7 @@ export default function PositionAnalysisPage() {
                       <div className="border-2 border-dashed border-amber-800/30 rounded-lg p-6 text-center">
                         <Upload className="h-8 w-8 text-amber-400 mx-auto mb-2" />
                         <p className="text-sm text-gray-300 mb-4">Upload an image of a chess board to analyze</p>
-                        <Button className="bg-amber-700 hover:bg-amber-600 text-white">Select Image</Button>
+                        <Button className="bg-amber-700 hover:bg-amber-600 text-yellow-400">Select Image</Button>
                         <p className="text-xs text-amber-300/60 mt-4">Supported formats: PNG, JPG, JPEG (Max 5MB)</p>
                       </div>
                     </div>
@@ -128,7 +128,7 @@ export default function PositionAnalysisPage() {
                   <Button
                     onClick={handleSubmit}
                     disabled={isLoading}
-                    className="bg-amber-700 hover:bg-amber-600 text-white"
+                    className="bg-amber-700 hover:bg-amber-600 text-yellow-400"
                   >
                     {isLoading ? (
                       <>
